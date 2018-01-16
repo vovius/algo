@@ -1,3 +1,5 @@
+package com.training.algo;
+
 import java.util.LinkedList;
 
 /**
