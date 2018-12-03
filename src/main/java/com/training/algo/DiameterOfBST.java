@@ -24,12 +24,12 @@ public class DiameterOfBST {
         BST<Integer> bst = BST.withSampleDataInt1();
         result = 0;
         diameter(bst.top);
-        System.out.printf("result=" + result);
+        System.out.println("result=" + result);
 
         bst = BST.withSampleDataInt2();
         result = 0;
         diameter(bst.top);
-        System.out.printf("result=" + result);
+        System.out.println("result=" + result);
     }
 
 }
