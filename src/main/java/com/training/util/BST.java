@@ -1,7 +1,7 @@
 package com.training.util;
 
 public class BST<T> {
-    public class Node<T> {
+    public static class Node<T> {
         public T payload;
         public Node<T> left;
         public Node<T> right;
@@ -50,6 +50,28 @@ public class BST<T> {
     public void print() {
         walkFromTop(top);
     }
+
+    public static BST<Integer> withSampleDataInt1() {
+        BST<Integer> bst = new BST<>();
+        bst.top = new Node<>(1);
+        bst.top.left = new Node<>(2);
+        bst.top.right = new Node<>(3);
+        bst.top.left.left = new Node<>(4);
+        bst.top.left.right = new Node<>(5);
+        return bst;
+    }
+
+    public static BST<Integer> withSampleDataInt2() {
+        BST<Integer> bst = new BST<>();
+        bst.top = new Node<>(1);
+        bst.top.left = new Node<>(2);
+        bst.top.right = new Node<>(3);
+        bst.top.right.right = new Node<>(6);
+        bst.top.left.left = new Node<>(4);
+        bst.top.left.right = new Node<>(5);
+        return bst;
+    }
+
 
     private void walkFromTop(Node node) {
         System.out.println(node);
