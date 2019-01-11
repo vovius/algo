@@ -21,42 +21,42 @@ import java.util.List;
 class XmlParser {
 
     public Node parse(Tokenizer tokenizer) {
-        Node root = new Node();
-        root.name = "root";
-        addToNode(root, tokenizer);
+        //throw new RuntimeException("TODO");
+        final Node root = new Node();
+        root.name = "ROOT";
+
+        addChilds(root, tokenizer);
+
         return root;
     }
 
-    private void addToNode(Node node, Tokenizer tokenizer) {
+    private void addChilds(Node root, Tokenizer tokenizer) {
 
-        Node currentNode = node;
-        Node parentNode = node;
-        for (Token token = tokenizer.getNextToken(); token != null; token = tokenizer.getNextToken()) {
+        while (true) {
+            final Token token = tokenizer.getNextToken();
+            if (token == null) {
+                return;
+            }
+
+            final Node child = new Node();
+
             switch (token.type) {
-                case BEGIN: {
-                        Node childNode = new Node();
-                        childNode.name = token.value;
-                        currentNode.children.add(childNode);
-                        //addToNode(childNode, tokenizer);
-                        parentNode = currentNode;
-                        currentNode = childNode;
-                    }
+                case BEGIN:
+                    child.name = token.value;
+                    root.children.add(child);
+                    addChilds(child, tokenizer);
                     break;
-
-                case END:
-                    currentNode = parentNode;
-                    break;
-
                 case TEXT:
-                    Node childNode = new Node();
-                    childNode.text = token.value;
-                    currentNode.children.add(childNode);
+                    child.text = token.value;
+                    root.children.add(child);
                     break;
-
+                case END:
+                    if (token.value.equals(root.name)) {
+                        return;
+                    }
             }
         }
     }
-
 //***************************************
 //** SOLUTION END
 //***************************************
