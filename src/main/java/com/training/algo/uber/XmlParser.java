@@ -21,9 +21,41 @@ import java.util.List;
 class XmlParser {
 
     public Node parse(Tokenizer tokenizer) {
-        throw new RuntimeException("TODO");
+        Node root = new Node();
+        root.name = "root";
+        addToNode(root, tokenizer);
+        return root;
     }
 
+    private void addToNode(Node node, Tokenizer tokenizer) {
+
+        Node currentNode = node;
+        Node parentNode = node;
+        for (Token token = tokenizer.getNextToken(); token != null; token = tokenizer.getNextToken()) {
+            switch (token.type) {
+                case BEGIN: {
+                        Node childNode = new Node();
+                        childNode.name = token.value;
+                        currentNode.children.add(childNode);
+                        //addToNode(childNode, tokenizer);
+                        parentNode = currentNode;
+                        currentNode = childNode;
+                    }
+                    break;
+
+                case END:
+                    currentNode = parentNode;
+                    break;
+
+                case TEXT:
+                    Node childNode = new Node();
+                    childNode.text = token.value;
+                    currentNode.children.add(childNode);
+                    break;
+
+            }
+        }
+    }
 
 //***************************************
 //** SOLUTION END
@@ -135,6 +167,11 @@ class XmlParser {
                 new Token(Token.Type.END, "a"),
                 new Token(Token.Type.BEGIN, "b"),
                 new Token(Token.Type.BEGIN, "baz"),
+                ///
+                new Token(Token.Type.BEGIN, "baz111"),
+                new Token(Token.Type.TEXT, "baz text"),
+                new Token(Token.Type.END, "baz111"),
+                ///
                 new Token(Token.Type.END, "baz"),
                 new Token(Token.Type.END, "b")
         };
