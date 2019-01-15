@@ -10,7 +10,7 @@ import static com.training.util.BST.Node;
 public class CheckTreeIsBST {
 
     public static boolean checkIfBST(BST<Integer> bst) {
-        Node<Integer> root  = bst.top;
+        Node<Integer> root = bst.top;
 
         return walkAndCheck(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
