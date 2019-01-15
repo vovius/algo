@@ -6,7 +6,7 @@ public class BST<T> {
         public Node<T> left;
         public Node<T> right;
 
-        Node(T payload) {
+        public Node(T payload) {
             this.payload = payload;
         }
 
@@ -71,6 +71,19 @@ public class BST<T> {
         bst.top.left.right = new Node<>(5);
         return bst;
     }
+
+    public static BST<Integer> withSampleDataInt3() {
+        BST<Integer> bst = new BST<>();
+        bst.top = new Node<>(6);
+        bst.top.left = new Node<>(4);
+        bst.top.right = new Node<>(8);
+        bst.top.right.right = new Node<>(9);
+        bst.top.right.left = new Node<>(7);
+        bst.top.left.left = new Node<>(3);
+        bst.top.left.right = new Node<>(5);
+        return bst;
+    }
+
 
 
     private void walkFromTop(Node node) {
