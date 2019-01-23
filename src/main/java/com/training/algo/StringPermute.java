@@ -6,16 +6,13 @@ public class StringPermute {
 
         if (start == end) {
             System.out.println(str);
-        } else {
-            for (int i = start+1; i < end; i++) {
-                str = swap(str, start, i);
-                permute(str, start + 1, end);
-                str = swap(str, start, i);
-            }
         }
-
+        for (int i = start; i <= end; i++) {
+            str = swap(str, start, i);
+            permute(str, start + 1, end);
+            str = swap(str, start, i);
+        }
     }
-
 
     private static String swap(String str, int first, int second) {
         char[] strArr = str.toCharArray();
