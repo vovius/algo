@@ -5,13 +5,6 @@ import java.util.Arrays;
 public class MergeSort {
 
     public void process(int[] arr, int start, int end) {
-//        int len = end-start+1;
-//        if (len == 2) {
-//            int min = Math.min(arr[start], arr[end]);
-//            int max = Math.max(arr[start], arr[end]);
-//            arr[start] = min;
-//            arr[end] = max;
-//        } else if (len > 2) {
         if (start < end) {
             int border = start + (end-start)/2;
             process(arr, start, border);
