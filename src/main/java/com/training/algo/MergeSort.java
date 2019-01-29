@@ -15,12 +15,11 @@ public class MergeSort {
 
     private void merge(int[] arr, int start, int end, int border) {
         int[] newArr = new int[end-start+1];
-        int end1 = border;
         int start1 = border+1;
         int i1 = start;
         int i2 = start1;
         int i = 0;
-        while (i1 <= end1 && i2 <= end) {
+        while (i1 <= border && i2 <= end) {
             if (arr[i1] < arr[i2]) {
                 newArr[i] = arr[i1];
                 i1++;
@@ -31,15 +30,13 @@ public class MergeSort {
             i++;
         }
 
-        while (i1 <= end1) {
+        while (i1 <= border) {
             newArr[i++] = arr[i1++];
         }
 
         while (i2 <= end) {
             newArr[i++] = arr[i2++];
         }
-
-
 
         for (int j=0; j<newArr.length; j++) {
             arr[start+j] = newArr[j];

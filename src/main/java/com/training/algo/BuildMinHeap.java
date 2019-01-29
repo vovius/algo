@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class BuildMinHeap {
 
     public int[] buildMinHeap(int[] arr) {
+
         minHeapify(0, arr);
         return arr;
     }
@@ -52,6 +53,15 @@ public class BuildMinHeap {
         }
 
         return newArr;
+    }
+
+    private void decreaseKey(int i, int newVal, int[] arr) {
+        arr[i] = newVal;
+
+        while (i != 0 && arr[i] < arr[parent(i)]) {
+            swap(i, parent(i), arr);
+            i = parent(i);
+        }
     }
 
     public static void main(String[] args) {
