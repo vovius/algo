@@ -32,6 +32,8 @@ public class BinarySearchSortedIntArray {
         BinarySearchSortedIntArray binarySearchSortedIntArray = new BinarySearchSortedIntArray();
         System.out.println(binarySearchSortedIntArray.process(arr, 2));
         System.out.println(binarySearchSortedIntArray.process(arr, 10));
+        System.out.println(binarySearchSortedIntArray.process(arr, 5));
+        System.out.println(binarySearchSortedIntArray.process(arr, 11));
     }
 
 }
