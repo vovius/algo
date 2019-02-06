@@ -6,7 +6,7 @@ public class MergeSort {
 
     public void process(int[] arr, int start, int end) {
         if (start < end) {
-            int border = start + (end-start)/2;
+            int border = (start + end)/2;
             process(arr, start, border);
             process(arr, border+1, end);
             merge(arr, start, end, border);

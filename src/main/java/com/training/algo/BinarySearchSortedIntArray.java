@@ -28,12 +28,13 @@ public class BinarySearchSortedIntArray {
 
 
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5,6,7,8,9,10};
+        int[] arr = {1,2,3,4,5,6,7,9,10,11};
         BinarySearchSortedIntArray binarySearchSortedIntArray = new BinarySearchSortedIntArray();
         System.out.println(binarySearchSortedIntArray.process(arr, 2));
         System.out.println(binarySearchSortedIntArray.process(arr, 10));
         System.out.println(binarySearchSortedIntArray.process(arr, 5));
         System.out.println(binarySearchSortedIntArray.process(arr, 11));
+        System.out.println(binarySearchSortedIntArray.process(arr, 8));
     }
 
 }
