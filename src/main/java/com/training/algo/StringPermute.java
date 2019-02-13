@@ -6,11 +6,12 @@ public class StringPermute {
 
         if (start == end) {
             System.out.println(str);
-        }
-        for (int i = start; i <= end; i++) {
-            str = swap(str, start, i);
-            permute(str, start + 1, end);
-            str = swap(str, start, i);
+        } else {
+            for (int i = start; i <= end; i++) {
+                str = swap(str, start, i);
+                permute(str, start + 1, end);
+                str = swap(str, start, i);
+            }
         }
     }
 
@@ -22,7 +23,7 @@ public class StringPermute {
     }
 
     public static void main(String[] args) {
-        String[] cases = {"abc", "abcd"};
+        String[] cases = {"123"};
         for (String theCase : cases) {
             System.out.println("----");
             permute(theCase, 0, theCase.length() - 1);

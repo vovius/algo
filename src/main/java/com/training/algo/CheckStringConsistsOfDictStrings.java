@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class CheckStringConsistsFromDictStrings {
+public class CheckStringConsistsOfDictStrings {
 
     public boolean check(String str, Set<String> dict) {
 
@@ -29,8 +29,8 @@ public class CheckStringConsistsFromDictStrings {
 
 
     public static void main(String[] args) {
-        CheckStringConsistsFromDictStrings checkStringConsistsFromDictStrings = new CheckStringConsistsFromDictStrings();
-        System.out.println(checkStringConsistsFromDictStrings.check("goodbyem", new HashSet<>(Arrays.asList("good", "bye", "goodb", "yem"))));
+        CheckStringConsistsOfDictStrings checkStringConsistsOfDictStrings = new CheckStringConsistsOfDictStrings();
+        System.out.println(checkStringConsistsOfDictStrings.check("goodbyem", new HashSet<>(Arrays.asList("good", "bye", "goodb", "yem"))));
     }
 
 }
