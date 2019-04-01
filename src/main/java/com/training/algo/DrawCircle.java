@@ -6,7 +6,7 @@ public class DrawCircle {
 
         for (int i = -r; i <= r; i++) {
             for (int j = -r; j <= r; j++ ) {
-                if (i*i + j*j < r*r+1) {
+                if (i*i + j*j < r*r) {
                     System.out.print(".");
                 } else {
                     System.out.print(" ");
